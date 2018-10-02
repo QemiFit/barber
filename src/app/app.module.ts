@@ -16,6 +16,8 @@ import {ReqProcessPage} from '../pages/req-process/req-process';
 import {NotifBoxPage} from '../pages/notif-box/notif-box';
 import {TransProcessPage} from '../pages/trans-process/trans-process';
 import {BookSuccessPage} from '../pages/book-success/book-success';
+import {TrendingPage} from '../pages/trending/trending';
+import {UserProfPage} from '../pages/user-prof/user-prof';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -36,6 +38,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     NotifBoxPage,
     TransProcessPage,
     BookSuccessPage,
+    TrendingPage,
+    UserProfPage,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +61,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     NotifBoxPage,
     TransProcessPage,
     BookSuccessPage,
-  ],
+    TrendingPage,
+    UserProfPage,
+    ],
   providers: [
     StatusBar,
     SplashScreen,

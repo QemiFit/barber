@@ -16,6 +16,8 @@ import {ReqProcessPage} from '../pages/req-process/req-process';
 import {NotifBoxPage} from '../pages/notif-box/notif-box';
 import {TransProcessPage} from '../pages/trans-process/trans-process';
 import {BookSuccessPage} from '../pages/book-success/book-success';
+import {TrendingPage} from '../pages/trending/trending';
+import {UserProfPage} from '../pages/user-prof/user-prof';
 
 @Component({
   templateUrl: 'app.html'
@@ -45,6 +47,9 @@ export class MyApp {
       { title: 'Notif_Box', component: NotifBoxPage },
       { title: 'Trans_Process', component: TransProcessPage },
       { title: 'Book_Success', component: BookSuccessPage },
+      { title: 'Trending', component: TrendingPage },
+      { title: 'User_Prof', component: UserProfPage },
+
 
 
     ];
