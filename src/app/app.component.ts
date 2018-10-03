@@ -18,6 +18,7 @@ import {TransProcessPage} from '../pages/trans-process/trans-process';
 import {BookSuccessPage} from '../pages/book-success/book-success';
 import {TrendingPage} from '../pages/trending/trending';
 import {UserProfPage} from '../pages/user-prof/user-prof';
+import {BarbHomePage} from '../pages/barb-home/barb-home';
 
 @Component({
   templateUrl: 'app.html'
@@ -49,6 +50,7 @@ export class MyApp {
       { title: 'Book_Success', component: BookSuccessPage },
       { title: 'Trending', component: TrendingPage },
       { title: 'User_Prof', component: UserProfPage },
+      { title: 'Barb_Home', component: BarbHomePage },
 
 
 
