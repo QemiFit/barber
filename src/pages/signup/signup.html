@@ -13,6 +13,19 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="master-page-bg">
+  
+  <ion-row>
+    <form (ngSubmit)="submit_signup()">
+      <ion-item>
+        <ion-label>Todo</ion-label>
+        <ion-input type="text" name="title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Description</ion-label>
+        <ion-textarea name="description"></ion-textarea>
+      </ion-item>
+      <button ion-button type="submit" block>Add Todo</button>
+    </form> </ion-row>
 
 </ion-content>
