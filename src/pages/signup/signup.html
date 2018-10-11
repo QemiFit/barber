@@ -16,16 +16,33 @@
 <ion-content padding class="master-page-bg">
   
   <ion-row>
-    <form (ngSubmit)="submit_signup()">
+    <form style="width:100%" (ngSubmit)="submit_signup()">
+      
       <ion-item>
-        <ion-label>Todo</ion-label>
-        <ion-input type="text" name="title"></ion-input>
+        <ion-input  type="text" name="name" placeholder="Name"></ion-input>
       </ion-item>
+      <br>
+
       <ion-item>
-        <ion-label>Description</ion-label>
-        <ion-textarea name="description"></ion-textarea>
-      </ion-item>
-      <button ion-button type="submit" block>Add Todo</button>
+        <ion-input full type="text" name="username" placeholder="Username"></ion-input>
+      </ion-item><br>
+
+      <ion-item>
+          <ion-input full type="email" name="email" placeholder="Email"></ion-input>
+        </ion-item><br>
+
+        <ion-item>
+            <ion-input full type="password" name="password" placeholder="Password"></ion-input>
+          </ion-item><br>
+
+          <ion-item>
+              <ion-label>Category</ion-label>
+              <ion-select (ngSubmit)="category()" multiple="true">
+                <ion-option>Customer</ion-option>
+                <ion-option>Barber</ion-option>
+                    </ion-select>
+            </ion-item><br>
+      <button ion-button type="submit" style="background-color: #f2a035" block>Sign Up</button>
     </form> </ion-row>
 
 </ion-content>

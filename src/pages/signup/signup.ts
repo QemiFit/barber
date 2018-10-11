@@ -22,4 +22,12 @@ export class SignupPage {
     console.log('ionViewDidLoad SignupPage');
   }
 
+  submit_signup() {
+    
+  }
+
+  category(){
+    
+  }
+
 }
