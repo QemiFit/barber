@@ -13,6 +13,26 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="master-page-bg">
 
+    <ion-row align-right>
+        <button ion-button icon-back>
+            <ion-icon name="back"></ion-icon>
+            Back
+          </button>
+    </ion-row>
+    <ion-row>
+        <form style="width:100%" (ngSubmit)="submit_login()">
+          
+          <ion-item>
+            <ion-input  type="email" name="email" placeholder="Email"></ion-input>
+          </ion-item>
+          <br>
+    
+          <ion-item>
+            <ion-input full type="password" name="password" placeholder="Password"></ion-input>
+          </ion-item><br>
+      
+          <button ion-button type="submit" style="background-color: #f2a035" block>Login</button>
+        </form> </ion-row>
 </ion-content>
