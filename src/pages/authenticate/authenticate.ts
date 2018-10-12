@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SignupPage } from '../signup/signup';
+import { LoginPage } from './../login/login';
+
 
 /**
  * Generated class for the AuthenticatePage page.
@@ -22,4 +25,11 @@ export class AuthenticatePage {
     console.log('ionViewDidLoad AuthenticatePage');
   }
 
+  gotosign(){
+    this.navCtrl.push(SignupPage);
+  }
+
+  gotologin(){
+    this.navCtrl.push(LoginPage)
+  }
 }
