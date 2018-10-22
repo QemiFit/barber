@@ -11,6 +11,7 @@ import {SignupPage} from '../pages/signup/signup';
 import {LoginPage} from '../pages/login/login';
 import {CustHomePage} from '../pages/cust-home/cust-home';
 import {BarberListPage} from '../pages/barber-list/barber-list';
+import { BookConfirmationPage } from './../pages/book-confirmation/book-confirmation';
 import {ReceiptPage} from '../pages/receipt/receipt';
 import {ReqProcessPage} from '../pages/req-process/req-process';
 import {NotifBoxPage} from '../pages/notif-box/notif-box';
@@ -34,6 +35,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     LoginPage,
     CustHomePage,
     BarberListPage,
+    BookConfirmationPage,
     ReceiptPage,
     ReqProcessPage,
     NotifBoxPage,
@@ -58,6 +60,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     LoginPage,
     CustHomePage,
     BarberListPage,
+    BookConfirmationPage,
     ReceiptPage,
     ReqProcessPage,
     NotifBoxPage,
