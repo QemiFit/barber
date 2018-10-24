@@ -15,7 +15,7 @@
 
 <ion-content padding>
 
-   <ion-card>
+   <ion-card full>
       <ion-item>
           <ion-row justify-content-center>
               <ion-col col-3><ion-avatar>
@@ -29,9 +29,38 @@
             Booking Detail
             </ion-card-title>
           <p>
-            The most popular industrial group ever, and largely
-            responsible for bringing the music to a mass audience.
-          </p>
+           Name: Uchiha Sasuke
+          </p><br>
+          <p>
+            Shop: Baek Barbershop
+          </p><br>
+          <p>
+            Distance: 5km
+          </p><br>
+
+          <ion-item>
+              <ion-label  ion-button outline style="color:#000000"><b style="font-size: 20px">Date</b></ion-label>
+              <ion-datetime displayFormat="MM/DD/YYYY"></ion-datetime>
+            </ion-item>
+
+            <ion-item>
+                <ion-label ion-button outline style="color:#000000"><b style="font-size: 20px">Start Time</b></ion-label>
+                <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A"></ion-datetime>
+              </ion-item><br>
+
+              <ion-item>
+                  <ion-label>Additional Service</ion-label>
+                  <ion-select multiple="true">
+                    <ion-option>Shave</ion-option>
+                    <ion-option>Put Pomade</ion-option>
+                    <ion-option>Buy Pomade</ion-option>
+
+                        </ion-select>
+                </ion-item><br><br><br><br>
+
+                <ion-col col-12 bottom><button ion-button style="background-color: #fd0000;" round>Cancel</button></ion-col>
+                <ion-col col-4 bottom><button ion-button style="background-color: #f2a035; left: 40px" round>Cut</button></ion-col>
+          
         </ion-card-content>
       </ion-card>
 
