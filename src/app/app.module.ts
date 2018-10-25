@@ -18,6 +18,7 @@ import {NotifBoxPage} from '../pages/notif-box/notif-box';
 import {TransProcessPage} from '../pages/trans-process/trans-process';
 import {BookSuccessPage} from '../pages/book-success/book-success';
 import {TrendingPage} from '../pages/trending/trending';
+import {PhotoReviewPage} from '../pages/photo-review/photo-review';
 import {UserProfPage} from '../pages/user-prof/user-prof';
 import {BarbHomePage} from '../pages/barb-home/barb-home';
 
@@ -42,6 +43,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TransProcessPage,
     BookSuccessPage,
     TrendingPage,
+    PhotoReviewPage,
     UserProfPage,
     BarbHomePage,
   ],
@@ -67,6 +69,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TransProcessPage,
     BookSuccessPage,
     TrendingPage,
+    PhotoReviewPage,
     UserProfPage,
     BarbHomePage,
     ],

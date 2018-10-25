@@ -18,6 +18,7 @@ import {NotifBoxPage} from '../pages/notif-box/notif-box';
 import {TransProcessPage} from '../pages/trans-process/trans-process';
 import {BookSuccessPage} from '../pages/book-success/book-success';
 import {TrendingPage} from '../pages/trending/trending';
+import {PhotoReviewPage} from '../pages/photo-review/photo-review';
 import {UserProfPage} from '../pages/user-prof/user-prof';
 import {BarbHomePage} from '../pages/barb-home/barb-home';
 
@@ -51,6 +52,7 @@ export class MyApp {
       { title: 'Trans_Process', component: TransProcessPage },
       { title: 'Book_Success', component: BookSuccessPage },
       { title: 'Trending', component: TrendingPage },
+      { title: 'Photo_Review', component: PhotoReviewPage },
       { title: 'User_Prof', component: UserProfPage },
       { title: 'Barb_Home', component: BarbHomePage },
 
