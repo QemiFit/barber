@@ -18,19 +18,30 @@
     <ion-searchbar
     [showCancelButton]="true"
 >
-</ion-searchbar>
+</ion-searchbar><br>
 
-<ion-fab>
-    <button ion-fab center>Share</button>
-    <ion-fab-list side="right">
-      <button ion-fab>Facebook</button>
-      <button ion-fab>Twitter</button>
-      <button ion-fab>Youtube</button>
-    </ion-fab-list>
-    <ion-fab-list side="right">
-      <button ion-fab>Vimeo</button>
-    </ion-fab-list>
-  </ion-fab>
+<ion-card full>
+  
+    <ion-card-content>
+      <ion-row>
+        <ion-col col-3>
+      <ion-item>
+          <ion-icon name="ios-alert" style="color: #f2a035"></ion-icon>
+      </ion-item>
+        </ion-col>
+
+        <ion-col col-5>
+      <ion-card-title>
+       You have 2 requests!
+        </ion-card-title>
+        </ion-col>
+
+        <button ion-button clear item-end>View</button>
+        </ion-row>
+     
+
+    </ion-card-content>
+</ion-card>
 
 
 
