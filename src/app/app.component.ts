@@ -21,6 +21,9 @@ import {TrendingPage} from '../pages/trending/trending';
 import {PhotoReviewPage} from '../pages/photo-review/photo-review';
 import {UserProfPage} from '../pages/user-prof/user-prof';
 import {BarbHomePage} from '../pages/barb-home/barb-home';
+import {RequestListPage} from '../pages/request-list/request-list';
+import {RequestDetailPage} from '../pages/request-detail/request-detail';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -55,6 +58,8 @@ export class MyApp {
       { title: 'Photo_Review', component: PhotoReviewPage },
       { title: 'User_Prof', component: UserProfPage },
       { title: 'Barb_Home', component: BarbHomePage },
+      { title: 'Request_List', component: RequestListPage },
+      { title: 'Request_Detail', component: RequestDetailPage },
 
 
 
