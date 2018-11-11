@@ -28,6 +28,12 @@ import {RequestDetailPage} from '../pages/request-detail/request-detail';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireAuth} from 'angularfire2/auth';
+import {firebaseConfig} from '../config';
+import {AuthService} from '../services/auth.service';
+import {NgxErrorsModule} from '@ultimate/ngxerrors';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -56,6 +62,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig.fire),
+    NgxErrorsModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -84,7 +92,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AngularFireAuth,
+    AuthService
   ]
 })
 export class AppModule {}

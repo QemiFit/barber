@@ -23,6 +23,7 @@ import {UserProfPage} from '../pages/user-prof/user-prof';
 import {BarbHomePage} from '../pages/barb-home/barb-home';
 import {RequestListPage} from '../pages/request-list/request-list';
 import {RequestDetailPage} from '../pages/request-detail/request-detail';
+import {AuthService} from '../services/auth.service'
 
 
 @Component({
@@ -35,7 +36,7 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private auth: AuthService) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
