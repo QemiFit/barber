@@ -17,33 +17,62 @@
   
   
   <ion-row>
-    <form style="width:100%" (ngSubmit)="submit_signup()">
-      
-      <ion-item>
-        <ion-input  type="text" name="name" placeholder="Name"></ion-input>
-      </ion-item>
-      <br>
 
-      <ion-item>
-        <ion-input full type="text" name="username" placeholder="Username"></ion-input>
-      </ion-item><br>
+    <form (ngSubmit)="submit_signup()" [formGroup]="form" style="width: 100%">
+      <ion-list inset>
 
-      <ion-item>
-          <ion-input full type="email" name="email" placeholder="Email"></ion-input>
-        </ion-item><br>
+          <ion-item [ngClass]="{ invalid: nameErrors.hasError('*', ['touched']) }">
+              <ion-input type="text" placeholder="Name" formControlName="name"></ion-input>
+            </ion-item>
 
-        <ion-item>
-            <ion-input full type="password" name="password" placeholder="Password"></ion-input>
-          </ion-item><br>
+            <div ngxErrors="name" #nameErrors="ngxErrors">
+                <div [ngxError]="['required']" [when]="['touched']">It should be a valid name</div>
+              </div>
 
-          <ion-item>
-              <ion-label>Category</ion-label>
-              <ion-select multiple="true">
-                <ion-option>Customer</ion-option>
-                <ion-option>Barber</ion-option>
-                    </ion-select>
-            </ion-item><br>
-      <button ion-button type="submit" style="background-color: #f2a035" block>Sign Up</button>
-    </form> </ion-row>
+              <ion-item [ngClass]="{ invalid: usernameErrors.hasError('*', ['touched']) }">
+                  <ion-input type="text" placeholder="Username" formControlName="username"></ion-input>
+                </ion-item>
+
+                <div ngxErrors="username" #usernameErrors="ngxErrors">
+                    <div [ngxError]="['required']" [when]="['touched']">It should be a valid username</div>
+                  </div>
+  
+        <ion-item [ngClass]="{ invalid: emailErrors.hasError('*', ['touched']) }">
+          <ion-input type="text" placeholder="Email" formControlName="email"></ion-input>
+        </ion-item>
+  
+        <div ngxErrors="email" #emailErrors="ngxErrors">
+          <div [ngxError]="['email', 'required']" [when]="['touched']">It should be a valid email</div>
+        </div>
+  
+        <ion-item [ngClass]="{ invalid: passwordErrors.hasError('*', ['touched']) }">
+          <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+        </ion-item>
+  
+        <div ngxErrors="password" #passwordErrors="ngxErrors">
+          <div [ngxError]="['minlength', 'required']" [when]="['touched']">It should be at least 6 characters</div>
+        </div>
+
+        
+        <ion-item [ngClass]="{ invalid: categoryErrors.hasError('*', ['touched']) }">
+           <ion-label>Category</ion-label>
+          <ion-select formControlName="category" multiple="true">
+              <ion-option value="1">Barber</ion-option>
+              <ion-option value="2">Customer</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <div ngxErrors="category" #categoryErrors="ngxErrors">
+              <div [ngxError]="['required']" [when]="['touched']">It should be at least 1 category</div>
+            </div>
+      </ion-list>
+  
+      <div padding-horizontal>
+        <div class="form-error">{{signupError}}</div>
+  
+        <button ion-button full type="submit" [disabled]="!form.valid">Sign up</button>
+      </div>
+    </form>
+  </ion-row>
 
 </ion-content>
