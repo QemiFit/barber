@@ -47,7 +47,11 @@ export class LoginPage {
 				() => this.navCtrl.setRoot(CustHomePage),
 				error => this.loginError = error.message
 			);
-  }
+	}
+	
+	signup(){
+		
+	}
 
   
 

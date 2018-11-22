@@ -8,6 +8,7 @@ import {AngularFirestore , AngularFirestoreCollection} from 'angularfire2/firest
 @Injectable()
 export class AuthService {
 	private user: firebase.User;
+	userdata: any;
 	// userCol: AngularFirestoreCollection<Users>;
 
 	constructor(
@@ -42,10 +43,15 @@ export class AuthService {
 	}
 
 	getUser() {
-    // Return the observable. DO NOT subscribe here.
-    return firebase.firestore().collection('users').doc(this.user.uid).get();
-    // Hint: you could also transform the value before returning it:
-    // return this.af.auth.map(authData => new User({name: authData.name}));
+		let userdoc = firebase.firestore().collection('users').doc(this.user.uid);
+		userdoc.onSnapshot(doc => {
+
+			this.userdata = doc.data();
+			console.log(this.userdata);
+		  
+		  });
+		
+		  return this.userdata;
   }
 
 }
