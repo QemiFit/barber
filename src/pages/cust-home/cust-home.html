@@ -6,84 +6,79 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>cust_home</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>cust_home </ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <ion-searchbar
-        [showCancelButton]="true"
-    >
+    <ion-searchbar [showCancelButton]="true">
     </ion-searchbar>
 
     <ion-slides style="height: 70%">
         <ion-slide>
             <ion-card>
-                
+
                 <ion-card-content>
-                  <ion-card-title>
-                    Aidilfitri Promo
+                    <ion-card-title>
+                        Aidilfitri Promo
                     </ion-card-title>
-                    <img src="../../assets/imgs/aidilfitri.jpg"/>
-                  <p>
-                   Happy eid to all muslims! let's celebrate it with our promo and get
-                   your new hairstyle fast! 
-                  </p>
+                    <img src="../../assets/imgs/aidilfitri.jpg" />
+                    <p>
+                        {{user.uid}}
+                    </p>
 
-                  <button ion-button icon-only style="width: 45%; left:30%;">
-                    <ion-icon name="card"></ion-icon>Redeem
-                  </button>
-                          </ion-card-content>
-              </ion-card>
+                    <button ion-button icon-only style="width: 45%; left:30%;">
+            <ion-icon name="card"></ion-icon>Redeem
+          </button>
+                </ion-card-content>
+            </ion-card>
         </ion-slide>
         <ion-slide>
-          <ion-card>
-                
-            <ion-card-content>
-              <ion-card-title>
-                Gift Voucher
-                </ion-card-title>
-                <img src="../../assets/imgs/voucher.jpg"/>
-              <p>
-               Gift voucher is on the air! Grab it redeem it before
-               July and keep enjoying our app!
-              </p>
+            <ion-card>
 
-              <button ion-button icon-only style="width: 45%; left:30%;">
-                <ion-icon name="card"></ion-icon>Redeem
-              </button>
+                <ion-card-content>
+                    <ion-card-title>
+                        Gift Voucher
+                    </ion-card-title>
+                    <img src="../../assets/imgs/voucher.jpg" />
+                    <p>
+                        Gift voucher is on the air! Grab it redeem it before July and keep enjoying our app!
+                    </p>
 
-              </ion-card-content>
-          </ion-card>
+                    <button ion-button icon-only style="width: 45%; left:30%;">
+            <ion-icon name="card"></ion-icon>Redeem
+          </button>
+
+                </ion-card-content>
+            </ion-card>
         </ion-slide>
         <ion-slide>
-          <ion-card>
-                
-            <ion-card-content>
-              <ion-card-title>
-                Christmas Coupon
-                </ion-card-title>
-                <img src="../../assets/imgs/christmas.jpg"/>
-              <p>
-               Merry Christmas! Let's celebrate it together with Christmas
-               Coupon and enjoy your new looks! 
-              </p>
+            <ion-card>
 
-              <button ion-button icon-only style="width: 45%; left:30%;">
-                <ion-icon name="card"></ion-icon>Redeem
-              </button>
+                <ion-card-content>
+                    <ion-card-title>
+                        Christmas Coupon
+                    </ion-card-title>
+                    <img src="../../assets/imgs/christmas.jpg" />
+                    <p>
+                        Merry Christmas! Let's celebrate it together with Christmas Coupon and enjoy your new looks!
+                    </p>
 
-              </ion-card-content>
-          </ion-card>
+                    <button ion-button icon-only style="width: 45%; left:30%;">
+            <ion-icon name="card"></ion-icon>Redeem
+          </button>
+
+                </ion-card-content>
+            </ion-card>
         </ion-slide>
-      </ion-slides>
+    </ion-slides>
 
-      <ion-fab center bottom style="height: 25%; left:47%">
-          <button ion-fab color="primary" style="width: 80px ; height: 80px">Button</button>
-        </ion-fab>
+    <ion-fab center bottom style="height: 25%; left:47%">
+        <button ion-fab color="primary" style="width: 80px ; height: 80px">Button</button>
+    </ion-fab>
 
-      
+
 </ion-content>
