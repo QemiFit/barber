@@ -91,6 +91,7 @@ import {NgxErrorsModule} from '@ultimate/ngxerrors';
     PhotoReviewPage,
     UserProfPage,
     BarbHomePage,
+    RequestListPage,
     RequestDetailPage,
 
     ],
