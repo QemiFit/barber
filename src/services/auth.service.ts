@@ -1,57 +1,89 @@
-import { Injectable } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase/app';
+import { Injectable } from "@angular/core";
+import { AngularFireAuth } from "angularfire2/auth";
+import * as firebase from "firebase/app";
 import AuthProvider = firebase.auth.AuthProvider;
-import {AngularFireDatabaseModule} from 'angularfire2/database';
-import {AngularFirestore , AngularFirestoreCollection} from 'angularfire2/firestore';
+import { AngularFireDatabaseModule } from "angularfire2/database";
+import {
+  AngularFirestore,
+  AngularFirestoreCollection
+} from "angularfire2/firestore";
+
+interface User {
+  uid: string;
+  name: string;
+  username: string;
+  email: string;
+  category: Array<any>;
+}
 
 @Injectable()
 export class AuthService {
-	private user: firebase.User;
-	userdata: any;
-	// userCol: AngularFirestoreCollection<Users>;
+  private user: firebase.User;
+  userdata: User;
+  // userCol: AngularFirestoreCollection<Users>;
 
-	constructor(
+  constructor(
+    public afAuth: AngularFireAuth // private afs: AngularFirestore
+  ) {
+    afAuth.authState.subscribe(user => {
+      this.user = user;
+      // console.log(user);
 
-		public afAuth: AngularFireAuth, 
-		// private afs: AngularFirestore
-	
-	) {
-		afAuth.authState.subscribe(user => {
-			this.user = user;
-		});
+      firebase
+        .firestore()
+        .collection("users")
+        .doc(this.user.uid)
+        .get()
+        .then(doc => {
+          if (doc.exists) {
+            console.log("document data", doc.data());
+            this.userdata = {
+              uid: this.user.uid,
+              name: doc.data().name,
+              username: doc.data().username,
+              email: this.user.email,
+              category: doc.data().category
+            };
+          } else {
+            console.log("no such document");
+          }
+        })
+        .catch(function(error) {
+          console.log("error getting document", error);
+        });
+    });
 
-		// this.userCol = afs.collection('users');
-	}
-
-	signInWithEmail(credentials) {
-        console.log('Sign in with email');
-        return this.afAuth.auth.signInWithEmailAndPassword(credentials.email,
-            credentials.password);
-	}
-	
-	signUp(credentials, profile) {
-		return this.afAuth.auth.createUserWithEmailAndPassword(credentials.email,credentials.password).then(newUserCredential => {
-			firebase.firestore().collection('users').doc(newUserCredential.user.uid).set({
-				name: profile.name,
-				username: profile.username,
-				category: profile.category,
-			})
-			//   .ref(`/users/${newUserCredential.user.uid}`)
-			  
-		  });
-	}
-
-	getUser() {
-		let userdoc = firebase.firestore().collection('users').doc(this.user.uid);
-		userdoc.onSnapshot(doc => {
-
-			this.userdata = doc.data();
-			console.log(this.userdata);
-		  
-		  });
-		
-		  return this.userdata;
+    // this.userCol = afs.collection('users');
   }
 
+  signInWithEmail(credentials) {
+    console.log("Sign in with email");
+    return this.afAuth.auth.signInWithEmailAndPassword(
+      credentials.email,
+      credentials.password
+    );
+  }
+
+  signUp(credentials, profile) {
+    return this.afAuth.auth
+      .createUserWithEmailAndPassword(credentials.email, credentials.password)
+      .then(newUserCredential => {
+        firebase
+          .firestore()
+          .collection("users")
+          .doc(newUserCredential.user.uid)
+          .set({
+            name: profile.name,
+            username: profile.username,
+            category: profile.category
+          });
+        //   .ref(`/users/${newUserCredential.user.uid}`)
+      });
+  }
+
+  getUser() {
+    console.log(this.userdata);
+    console.log(this.user);
+    return this.userdata;
+  }
 }
