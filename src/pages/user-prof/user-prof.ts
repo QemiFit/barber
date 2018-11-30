@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AuthService } from '../../services/auth.service';
 
 /**
  * Generated class for the UserProfPage page.
@@ -15,11 +16,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class UserProfPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  user;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private auth: AuthService) {
+
+    this.user = auth.getUser();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UserProfPage');
+    console.log(this.user);
+  }
+
+  getUserData(){
+
   }
 
 }

@@ -89,15 +89,10 @@ import { NgxErrorsModule } from "@ultimate/ngxerrors";
     PhotoReviewPage,
     UserProfPage,
     BarbHomePage,
-<<<<<<< HEAD
     RequestListPage,
     RequestDetailPage,
 
     ],
-=======
-    RequestDetailPage
-  ],
->>>>>>> d25f5e90299bbeffd755b5bc45f9ff8215fe922f
   providers: [
     StatusBar,
     SplashScreen,
