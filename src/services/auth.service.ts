@@ -14,6 +14,9 @@ interface User {
   username: string;
   email: string;
   category: Array<any>;
+  age: number;
+  occupation: string;
+  state: string;
 }
 
 @Injectable()
@@ -42,7 +45,10 @@ export class AuthService {
               name: doc.data().name,
               username: doc.data().username,
               email: this.user.email,
-              category: doc.data().category
+              category: doc.data().category,
+              age: doc.data().Age,
+              occupation: doc.data().Occupation,
+              state: doc.data().State,
             };
           } else {
             console.log("no such document");
