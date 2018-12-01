@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {OrderService} from "../../services/order.service";
 
 /**
  * Generated class for the ReceiptPage page.
@@ -14,8 +15,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'receipt.html',
 })
 export class ReceiptPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  booking;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private order: OrderService) {
+    this.booking = order.getReceipt("dPDqhwM7KXT2vkkildE4");
   }
 
   ionViewDidLoad() {
