@@ -18,6 +18,8 @@ export class OrderService {
     constructor() {}
 
     getReceipt(receiptID) {
+
+        // firebase method to get data in collection and document
         firebase
         .firestore()
         .collection("booking")
@@ -25,15 +27,49 @@ export class OrderService {
         .get()
         .then(doc => {
             console.log("document data", doc.data());
+
+            // binding do data to variable bookdata
             let bookdata = doc.data();
 
-                bookdata.barber.get().then(barberdoc => {
-                    console.log("barber detail", barberdoc.data());
-                });
-            
-        
-               
-            
+            // untuk dapatkan data kepada reference dalam document DB
+        bookdata.Barber.get().then(
+            barberdata => {
+                console.log(barberdata.data());
+
+                barberdata.data().shop.get().then(
+                    shopdata => {
+                        console.log(shopdata.data());
+                    }
+                )
+
+                barberdata.data().userID.get().then(
+                    userdata => {
+                        console.log(userdata.data());
+                    }
+                )
+            }
+        )
+
+        bookdata.Promotion.get().then(
+            promodata => {
+                console.log(promodata.data());
+            }
+        )
+
+        bookdata.bookerID.get().then(
+            bookerdata => {
+                console.log(bookerdata.data());
+            }
+        )
+
+        // this one untuk pecahkan array
+        bookdata.Service.forEach(element => {
+            element.get().then(
+                servdata => {
+                    console.log(servdata.data());
+                }
+            )
+        });
 
         })
         .catch(function(error){
