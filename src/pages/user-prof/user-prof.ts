@@ -28,8 +28,6 @@ export class UserProfPage {
     console.log(this.user);
   }
 
-  getUserData(){
 
-  }
 
 }

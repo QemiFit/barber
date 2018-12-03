@@ -18,10 +18,13 @@ export class ReceiptPage {
   booking;
   constructor(public navCtrl: NavController, public navParams: NavParams, private order: OrderService) {
     this.booking = order.getReceipt("dPDqhwM7KXT2vkkildE4");
+
+    
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ReceiptPage');
+    console.log(this.booking.name);
   }
 
 }
