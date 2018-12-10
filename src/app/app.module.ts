@@ -11,12 +11,12 @@ import { SignupPage } from "../pages/signup/signup";
 import { LoginPage } from "../pages/login/login";
 import { CustHomePage } from "../pages/cust-home/cust-home";
 import { BarberListPage } from "../pages/barber-list/barber-list";
-import { BookConfirmationPage } from "./../pages/book-confirmation/book-confirmation";
+import { BookConfirmationPage } from "../pages/book-confirmation/book-confirmation";
+import{BookingDetailPage} from "../pages/booking-detail/booking-detail";
+import {BookingListPage} from "../pages/booking-list/booking-list";
+import {CurrentBookingPage} from "../pages/current-booking/current-booking";
 import { ReceiptPage } from "../pages/receipt/receipt";
-import { ReqProcessPage } from "../pages/req-process/req-process";
-import { NotifBoxPage } from "../pages/notif-box/notif-box";
-import { TransProcessPage } from "../pages/trans-process/trans-process";
-import { BookSuccessPage } from "../pages/book-success/book-success";
+import {ReviewRatingPage} from "../pages/review-rating/review-rating";
 import { TrendingPage } from "../pages/trending/trending";
 import { PhotoReviewPage } from "../pages/photo-review/photo-review";
 import { UserProfPage } from "../pages/user-prof/user-prof";
@@ -49,11 +49,11 @@ import { NgxErrorsModule } from "@ultimate/ngxerrors";
     CustHomePage,
     BarberListPage,
     BookConfirmationPage,
+    BookingDetailPage,
+    BookingListPage,
+    CurrentBookingPage,
     ReceiptPage,
-    ReqProcessPage,
-    NotifBoxPage,
-    TransProcessPage,
-    BookSuccessPage,
+    ReviewRatingPage,
     TrendingPage,
     PhotoReviewPage,
     UserProfPage,
@@ -81,11 +81,11 @@ import { NgxErrorsModule } from "@ultimate/ngxerrors";
     CustHomePage,
     BarberListPage,
     BookConfirmationPage,
+    BookingDetailPage,
+    BookingListPage,
+    CurrentBookingPage,
     ReceiptPage,
-    ReqProcessPage,
-    NotifBoxPage,
-    TransProcessPage,
-    BookSuccessPage,
+    ReviewRatingPage,
     TrendingPage,
     PhotoReviewPage,
     UserProfPage,

@@ -55,7 +55,7 @@ export class OrderService {
             barberdata => {
                 console.log(barberdata.data());
 
-                barberdata.data().shop.get().then(
+                barberdata.data().shop.onSnapshot(
                     shopdata => {
                         console.log(shopdata.data());
 

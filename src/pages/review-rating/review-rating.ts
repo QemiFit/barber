@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the BookSuccessPage page.
+ * Generated class for the ReviewRatingPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-book-success',
-  templateUrl: 'book-success.html',
+  selector: 'page-review-rating',
+  templateUrl: 'review-rating.html',
 })
-export class BookSuccessPage {
+export class ReviewRatingPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad BookSuccessPage');
+    console.log('ionViewDidLoad ReviewRatingPage');
   }
 
 }

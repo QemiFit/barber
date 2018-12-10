@@ -11,12 +11,12 @@ import { SignupPage } from "../pages/signup/signup";
 import { LoginPage } from "../pages/login/login";
 import { CustHomePage } from "../pages/cust-home/cust-home";
 import { BarberListPage } from "../pages/barber-list/barber-list";
-import { BookConfirmationPage } from "./../pages/book-confirmation/book-confirmation";
+import { BookConfirmationPage } from "../pages/book-confirmation/book-confirmation";
+import {BookingDetailPage} from "../pages/booking-detail/booking-detail";
+import {BookingListPage} from "../pages/booking-list/booking-list";
+import {CurrentBookingPage} from "../pages/current-booking/current-booking";
 import { ReceiptPage } from "../pages/receipt/receipt";
-import { ReqProcessPage } from "../pages/req-process/req-process";
-import { NotifBoxPage } from "../pages/notif-box/notif-box";
-import { TransProcessPage } from "../pages/trans-process/trans-process";
-import { BookSuccessPage } from "../pages/book-success/book-success";
+import {ReviewRatingPage} from "../pages/review-rating/review-rating";
 import { TrendingPage } from "../pages/trending/trending";
 import { PhotoReviewPage } from "../pages/photo-review/photo-review";
 import { UserProfPage } from "../pages/user-prof/user-prof";
@@ -35,7 +35,7 @@ export class MyApp {
 
   pages: Array<{ title: string; component: any }>;
 
-  user: any;
+  user: any; 
 
   constructor(
     public platform: Platform,
@@ -58,11 +58,11 @@ export class MyApp {
       { title: "Cust_Home", component: CustHomePage },
       { title: "Barber_List", component: BarberListPage },
       { title: "Book_Confirmation", component: BookConfirmationPage },
+      { title: "Booking Detail", component: BookingDetailPage },
+      { title: "Booking List", component: BookingListPage },
+      { title: "Current Booking", component: CurrentBookingPage },
       { title: "Receipt", component: ReceiptPage },
-      { title: "Req_Process", component: ReqProcessPage },
-      { title: "Notif_Box", component: NotifBoxPage },
-      { title: "Trans_Process", component: TransProcessPage },
-      { title: "Book_Success", component: BookSuccessPage },
+      { title: "Review Rating", component: ReviewRatingPage },
       { title: "Trending", component: TrendingPage },
       { title: "Photo_Review", component: PhotoReviewPage },
       { title: "User_Prof", component: UserProfPage },

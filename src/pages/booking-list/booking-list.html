@@ -1,0 +1,49 @@
+<!--
+  Generated template for the BookingListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Booking List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="master-page-bg">
+
+    <ion-segment [(ngModel)]="booking">
+        <ion-segment-button value="current">
+          Current
+        </ion-segment-button>
+        <ion-segment-button value="history">
+          History
+        </ion-segment-button>
+      </ion-segment>
+  
+      <div [ngSwitch]="booking">
+          <ion-list *ngSwitchCase="'current'">
+            <ion-item>
+              <ion-thumbnail item-start>
+                <img src="img/thumbnail-puppy-1.jpg">
+              </ion-thumbnail>
+              <h2>Ruby</h2>
+            </ion-item>
+            
+          </ion-list>
+        
+          <ion-list *ngSwitchCase="'history'">
+            <ion-item>
+              <ion-thumbnail item-start>
+                <img src="img/thumbnail-kitten-1.jpg">
+              </ion-thumbnail>
+              <h2>Luna</h2>
+            </ion-item>
+          
+          </ion-list>
+        </div>
+
+</ion-content>
