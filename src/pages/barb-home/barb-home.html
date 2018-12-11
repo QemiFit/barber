@@ -13,26 +13,29 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="master-page-bg">
 
     <ion-searchbar
-    [showCancelButton]="true"
->
+[showCancelButton]="true">
 </ion-searchbar><br>
+
+<ion-item style="background-color:transparent">
+    <ion-toggle [(ngModel)]="pepperoni"></ion-toggle>
+  </ion-item>
 
 <ion-card full>
   
     <ion-card-content>
       <ion-row>
         <ion-col col-3>
-      <ion-item>
+      <ion-item >
           <ion-icon name="ios-alert" style="color: #f2a035"></ion-icon>
       </ion-item>
         </ion-col>
 
         <ion-col col-5>
       <ion-card-title>
-       You have 2 requests!
+       You have 1 request!
         </ion-card-title>
         </ion-col>
 
@@ -42,10 +45,4 @@
 
     </ion-card-content>
 </ion-card>
-
-
-
-  <ion-fab center bottom style="height: 25%; left:47%">
-      <button ion-fab color="primary" style="width: 80px ; height: 80px">Button</button>
-    </ion-fab>
 </ion-content>
