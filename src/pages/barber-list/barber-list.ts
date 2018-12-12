@@ -1,3 +1,4 @@
+import { BookConfirmationPage } from './../book-confirmation/book-confirmation';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -20,6 +21,10 @@ export class BarberListPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BarberListPage');
+  }
+
+  gotobookcon(){
+    this.navCtrl.push(BookConfirmationPage);
   }
 
 }

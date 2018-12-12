@@ -7,7 +7,7 @@
 	</ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="master-page-bg">
 	<form (ngSubmit)="submit_login()" [formGroup]="loginForm">
 		<ion-list inset>
 
@@ -41,7 +41,7 @@
 
 			<ion-list>
 
-				<button ion-button icon-left block clear (click)="signup()">
+				<button  ion-button icon-left block clear (click)="signup()">
 					<ion-icon name="person-add"></ion-icon>
 					Sign up
 				</button>

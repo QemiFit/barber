@@ -32,6 +32,8 @@ export class AuthService {
       this.user = user;
       // console.log(user);
 
+      // console.log(this.user);
+if(this.user !== null){
       firebase
         .firestore()
         .collection("users")
@@ -57,6 +59,7 @@ export class AuthService {
         .catch(function(error) {
           console.log("error getting document", error);
         });
+    }
     });
 
     // this.userCol = afs.collection('users');
