@@ -20,6 +20,7 @@ import {ReviewRatingPage} from "../pages/review-rating/review-rating";
 import { TrendingPage } from "../pages/trending/trending";
 import { PhotoReviewPage } from "../pages/photo-review/photo-review";
 import { UserProfPage } from "../pages/user-prof/user-prof";
+import {EditProfilePage} from "../pages/edit-profile/edit-profile";
 import { BarbHomePage } from "../pages/barb-home/barb-home";
 import { RequestListPage } from "../pages/request-list/request-list";
 import { RequestDetailPage } from "../pages/request-detail/request-detail";
@@ -66,6 +67,7 @@ export class MyApp {
       { title: "Trending", component: TrendingPage },
       { title: "Photo_Review", component: PhotoReviewPage },
       { title: "User_Prof", component: UserProfPage },
+      { title: "Edit Profile", component: EditProfilePage },
       { title: "Barb_Home", component: BarbHomePage },
       { title: "Request_List", component: RequestListPage },
       { title: "Request_Detail", component: RequestDetailPage }
