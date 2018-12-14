@@ -13,30 +13,47 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="master-page-bg">
 
-    <img src="../../assets/imgs/trending-1.jpg"style="width: 100%; height: 40%">
+    <ion-card>
 
-    <ion-row>
-      <ion-col col-7 offset-7>
-
-          <button ion-button icon-only clear>
-              <ion-icon name="ios-heart-outline"></ion-icon>
-              <ion-badge>260k</ion-badge> Like
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="../../assets/imgs/sasuke.jpg">
+          </ion-avatar>
+          <h2>Marty McFly</h2>
+        </ion-item>
+      
+        <img src="../../assets/imgs/trending-1.jpg">
+      
+        <ion-card-content>
+          <p>Left-side pompadour with shavvy beard.</p>
+        </ion-card-content>
+      
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-start clear small>
+              <ion-icon name="thumbs-up"></ion-icon>
+              <div>12 Likes</div>
             </button>
-      </ion-col>
-    </ion-row>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-start clear small>
+              <ion-icon name="text"></ion-icon>
+              <div>4 Comments</div>
+            </button>
+          </ion-col>
+          <ion-col center text-center>
+            <ion-note>
+              11h ago
+            </ion-note>
+          </ion-col>
+        </ion-row>
+      
+      </ion-card>
 
     <ion-card style="width: 95%">
-        <ion-card-content>
-          <ion-card-title>
-           By Uchiha Sasuke
-            </ion-card-title>
-          <p>
-            Left-side pompadour with shavvy beard.
-          </p><br>
-
-          <ion-list>
+            <ion-list>
               <ion-item>
                 <ion-avatar item-start>
                   <img src="../../assets/imgs/saitama.jpg">
@@ -64,7 +81,6 @@
                     <p>Nice haircut but i think the service should be improve in term of time management</p>
                   </ion-item>
             </ion-list>
-        </ion-card-content>
       </ion-card>
 
 </ion-content>

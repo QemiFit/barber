@@ -1,0 +1,72 @@
+<!--
+  Generated template for the BookingListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Booking List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="master-page-bg">
+
+    <ion-segment [(ngModel)]="booking">
+        <ion-segment-button value="current">
+          Current
+        </ion-segment-button>
+        <ion-segment-button value="history">
+          History
+        </ion-segment-button>
+      </ion-segment><br>
+  
+      <div [ngSwitch]="booking">
+          <ion-list *ngSwitchCase="'current'">
+            <ion-item>
+              <ion-avatar item-start >
+                <img src="../../assets/imgs/sasuke.jpg" style="width: 70px; height: 70px">
+              </ion-avatar>
+              <h2>Uchiha Sasuke</h2> 
+              <p style="color:black">Baek Barbershop</p> 
+              <p style="color:black">5km</p>
+              <p style="color:black">10 mins</p>
+
+              <ion-row>
+                <ion-col offset-7>
+                  <ion-note>
+                    Booked
+                  </ion-note>
+                </ion-col>
+              </ion-row>
+
+            </ion-item>
+          </ion-list>
+        
+          <ion-list *ngSwitchCase="'history'">
+            <ion-item>
+              <ion-avatar item-start >
+                <img src="../../assets/imgs/saiki.jpg" style="width: 70px; height: 70px">
+              </ion-avatar>
+              <h2>Saiki Kusuo</h2> 
+              <p style="color:black">Bangi Barbershop</p> 
+              <p style="color:black">2km</p>
+              <p style="color:black">5 mins</p>
+
+              <ion-row>
+                <ion-col offset-7>
+                  <ion-note>
+                    Completed
+                  </ion-note>
+                </ion-col>
+              </ion-row>
+
+            </ion-item>
+          
+          </ion-list>
+        </div>
+
+</ion-content>

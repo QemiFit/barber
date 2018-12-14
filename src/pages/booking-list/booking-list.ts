@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the ReqProcessPage page.
+ * Generated class for the BookingListPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-req-process',
-  templateUrl: 'req-process.html',
+  selector: 'page-booking-list',
+  templateUrl: 'booking-list.html',
 })
-export class ReqProcessPage {
+export class BookingListPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ReqProcessPage');
+    console.log('ionViewDidLoad BookingListPage');
   }
 
 }

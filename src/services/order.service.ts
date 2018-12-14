@@ -15,6 +15,7 @@ interface booking {
 
 @Injectable()
 export class OrderService {
+<<<<<<< HEAD
   book: booking;
   bookname;
   bookdate;
@@ -69,6 +70,69 @@ export class OrderService {
               console.log(this.bookname);
             });
         });
+=======
+    book: booking;
+     bookname;
+         bookdate;
+         bookgrandtotal;
+         bookshop;
+         bookbooker;
+
+
+    constructor() {}
+
+    getReceipt(receiptID) {
+
+        
+
+        // firebase method to get data in collection and document
+        firebase
+        .firestore()
+        .collection("booking")
+        .doc(receiptID)
+        .get()
+        .then(doc => {
+            console.log("document data", doc.data());
+
+            
+
+            // binding doc data to variable bookdata
+            let bookdata = doc.data();
+
+             this.bookdate = bookdata.Booking_date;
+             this.bookgrandtotal = bookdata.Total_Price;
+
+            console.log(this.bookgrandtotal);
+            console.log(this.bookdate);
+
+            // untuk dapatkan data kepada reference dalam document DB
+        bookdata.Barber.get().then(
+            barberdata => {
+                console.log(barberdata.data());
+
+                barberdata.data().shop.onSnapshot(
+                    shopdata => {
+                        console.log(shopdata.data());
+
+                          this.bookshop = shopdata.data().Name;
+
+                        console.log(this.bookshop);
+                    }
+                )
+
+                barberdata.data().userID.get().then(
+                    userdata => {
+                        console.log(userdata.data());
+
+
+                        this.bookname = userdata.data().name;
+
+                        console.log(this.bookname);
+                    }
+                )
+            }
+        )
+>>>>>>> d36c6bed0419fc790e7caf611c01d7298777275e
 
         bookdata.Promotion.get().then(promodata => {
           console.log(promodata.data());
