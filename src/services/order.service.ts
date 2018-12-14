@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import * as firebase from "firebase/app";
 import { Timestamp } from "../../node_modules/rxjs";
+import { ElementSchemaRegistry } from "../../node_modules/@angular/compiler";
 
 // model
 interface booking {
@@ -11,17 +12,18 @@ interface booking {
   // addService: Array<any>;
   booker: string;
   grandtotal: number;
+  status: number;
 }
 
 @Injectable()
 export class OrderService {
-<<<<<<< HEAD
   book: booking;
   bookname;
   bookdate;
   bookgrandtotal;
   bookshop;
   bookbooker;
+  bookstatus;
 
   constructor() {}
 
@@ -32,11 +34,13 @@ export class OrderService {
       .collection("booking")
       .doc(receiptID)
       .get()
-      .then(doc => {
+      .then(async doc => {
         console.log("document data", doc.data());
 
         // binding doc data to variable bookdata
-        let bookdata = doc.data();
+        let bookdata =  doc.data();
+
+        this.bookstatus = await bookdata.Status;
 
         this.bookdate = bookdata.Booking_date;
         this.bookgrandtotal = bookdata.Total_Price;
@@ -45,10 +49,10 @@ export class OrderService {
         console.log(this.bookdate);
 
         // untuk dapatkan data kepada reference dalam document DB
-        bookdata.Barber.get().then(barberdata => {
+        await bookdata.Barber.get().then(async barberdata => {
           console.log(barberdata.data());
 
-          barberdata
+          await barberdata
             .data()
             .shop.get()
             .then(async shopdata => {
@@ -59,7 +63,7 @@ export class OrderService {
               console.log(this.bookshop);
             });
 
-          barberdata
+          await barberdata
             .data()
             .userID.get()
             .then(async userdata => {
@@ -70,78 +74,15 @@ export class OrderService {
               console.log(this.bookname);
             });
         });
-=======
-    book: booking;
-     bookname;
-         bookdate;
-         bookgrandtotal;
-         bookshop;
-         bookbooker;
-
-
-    constructor() {}
-
-    getReceipt(receiptID) {
-
-        
-
-        // firebase method to get data in collection and document
-        firebase
-        .firestore()
-        .collection("booking")
-        .doc(receiptID)
-        .get()
-        .then(doc => {
-            console.log("document data", doc.data());
-
-            
-
-            // binding doc data to variable bookdata
-            let bookdata = doc.data();
-
-             this.bookdate = bookdata.Booking_date;
-             this.bookgrandtotal = bookdata.Total_Price;
-
-            console.log(this.bookgrandtotal);
-            console.log(this.bookdate);
-
-            // untuk dapatkan data kepada reference dalam document DB
-        bookdata.Barber.get().then(
-            barberdata => {
-                console.log(barberdata.data());
-
-                barberdata.data().shop.onSnapshot(
-                    shopdata => {
-                        console.log(shopdata.data());
-
-                          this.bookshop = shopdata.data().Name;
-
-                        console.log(this.bookshop);
-                    }
-                )
-
-                barberdata.data().userID.get().then(
-                    userdata => {
-                        console.log(userdata.data());
-
-
-                        this.bookname = userdata.data().name;
-
-                        console.log(this.bookname);
-                    }
-                )
-            }
-        )
->>>>>>> d36c6bed0419fc790e7caf611c01d7298777275e
 
         bookdata.Promotion.get().then(promodata => {
           console.log(promodata.data());
         });
 
-        bookdata.bookerID.get().then(bookerdata => {
+        await bookdata.bookerID.get().then(async bookerdata => {
           console.log(bookerdata.data());
 
-          this.bookbooker = bookerdata.data().Name;
+          this.bookbooker = await bookerdata.data().Name; 
 
           console.log(this.bookbooker);
         });
@@ -164,7 +105,8 @@ export class OrderService {
       shop: this.bookshop,
       date: this.bookdate,
       grandtotal: this.bookgrandtotal,
-      booker: this.bookbooker
+      booker: this.bookbooker,
+      status: this.bookstatus
     };
     console.log(this.book);
     return this.book;
