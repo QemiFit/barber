@@ -34,7 +34,7 @@ import { AngularFireDatabaseModule } from "angularfire2/database";
 // import { AngularFirestore} from 'angularfire2/firestore';
 import { firebaseConfig } from "../config";
 import { AuthService } from "../services/auth.service";
-import { OrderService} from "../services/order.service";
+import { OrderService } from "../services/order.service";
 import { NgxErrorsModule } from "@ultimate/ngxerrors";
 
 @NgModule({
@@ -66,8 +66,8 @@ import { NgxErrorsModule } from "@ultimate/ngxerrors";
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig.fire),
     NgxErrorsModule,
-    AngularFirestoreModule,
-    AngularFireDatabaseModule
+    AngularFirestoreModule
+    // AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -91,9 +91,8 @@ import { NgxErrorsModule } from "@ultimate/ngxerrors";
     UserProfPage,
     BarbHomePage,
     RequestListPage,
-    RequestDetailPage,
-
-    ],
+    RequestDetailPage
+  ],
   providers: [
     StatusBar,
     SplashScreen,
