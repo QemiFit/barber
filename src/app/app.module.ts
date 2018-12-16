@@ -24,6 +24,7 @@ import {EditProfilePage} from "../pages/edit-profile/edit-profile";
 import { BarbHomePage } from "../pages/barb-home/barb-home";
 import { RequestListPage } from "../pages/request-list/request-list";
 import { RequestDetailPage } from "../pages/request-detail/request-detail";
+import { LogoutPage} from "../pages/logout/logout";
 
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
@@ -61,7 +62,8 @@ import { NgxErrorsModule } from "@ultimate/ngxerrors";
     EditProfilePage,
     BarbHomePage,
     RequestListPage,
-    RequestDetailPage
+    RequestDetailPage,
+    LogoutPage
   ],
   imports: [
     BrowserModule,
@@ -94,7 +96,8 @@ import { NgxErrorsModule } from "@ultimate/ngxerrors";
     EditProfilePage,
     BarbHomePage,
     RequestListPage,
-    RequestDetailPage
+    RequestDetailPage,
+    LogoutPage
   ],
   providers: [
     StatusBar,

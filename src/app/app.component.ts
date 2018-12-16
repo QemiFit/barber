@@ -25,6 +25,7 @@ import { BarbHomePage } from "../pages/barb-home/barb-home";
 import { RequestListPage } from "../pages/request-list/request-list";
 import { RequestDetailPage } from "../pages/request-detail/request-detail";
 import { AuthService } from "../services/auth.service";
+import { LogoutPage } from "../pages/logout/logout";
 
 @Component({
   templateUrl: "app.html"
@@ -70,7 +71,8 @@ export class MyApp {
       { title: "Edit Profile", component: EditProfilePage },
       { title: "Barb_Home", component: BarbHomePage },
       { title: "Request_List", component: RequestListPage },
-      { title: "Request_Detail", component: RequestDetailPage }
+      { title: "Request_Detail", component: RequestDetailPage },
+      { title: "logout", component: LogoutPage}
     ];
   }
 

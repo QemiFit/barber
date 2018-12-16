@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {OrderService} from "../../services/order.service";
+import { AngularFireAuth } from "angularfire2/auth";
+
 
 /**
  * Generated class for the ReceiptPage page.
@@ -14,13 +16,13 @@ import {OrderService} from "../../services/order.service";
   selector: 'page-receipt',
   templateUrl: 'receipt.html',
 })
-export class ReceiptPage {
+export class ReceiptPage implements OnInit{
   booking;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private order: OrderService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private order: OrderService, private afa: AngularFireAuth) {
     // this.booking = order.getReceipt("dPDqhwM7KXT2vkkildE4");
   }
 
-  OnInit(){
+  ngOnInit(){
     this.booking = this.order.getReceipt("dPDqhwM7KXT2vkkildE4");
   }
 
