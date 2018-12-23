@@ -1,3 +1,4 @@
+import { BarberReviewPage } from './../barber-review/barber-review';
 import { BookConfirmationPage } from './../book-confirmation/book-confirmation';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -21,6 +22,10 @@ export class BarberListPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BarberListPage');
+  }
+
+  gotoviewbarber(){
+    this.navCtrl.push(BarberReviewPage);
   }
 
   gotobookcon(){

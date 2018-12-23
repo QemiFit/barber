@@ -25,12 +25,9 @@
           <p>5km</p>
           <p>10 mins</p>
 
-          <button ion-button clear item-end>View</button>
+          <button ion-button clear item-end (click)=" gotoviewbarber()">View</button>
 
-         <ion-item>
-            <ion-icon name="star" item-start style="color: #f2a035"></ion-icon>Rating
-            <ion-badge item-end  style="background-color: #f2a035">5</ion-badge>
-          </ion-item>
+         
         </ion-item>
         
 
@@ -41,6 +38,125 @@
             </button>
           </ion-item-options>
         </ion-item-sliding>
+
+        <ion-item-sliding>
+          <ion-item>
+            <ion-avatar item-start >
+              <img src="../../assets/imgs/saiki.jpg" style="width: 70px; height: 70px">
+            </ion-avatar>
+            <h2>Saiki Kusuo</h2> 
+            <p>Vintage Barbershop</p> 
+            <p>7km</p>
+            <p>12 mins</p>
+  
+            <button ion-button clear item-end (click)=" gotoviewbarber()">View</button>
+  
+           
+          </ion-item>
+          
+  
+          <ion-item-options side="right">
+              <button ion-button color="primary" (click)="gotobookcon()">
+                <ion-icon name="bookmarks"></ion-icon>
+                Book <br>Appointment
+              </button>
+            </ion-item-options>
+          </ion-item-sliding>
+
+          <ion-item-sliding>
+            <ion-item>
+              <ion-avatar item-start >
+                <img src="../../assets/imgs/naruto.jpg" style="width: 70px; height: 70px">
+              </ion-avatar>
+              <h2>Uzumaki Naruto</h2> 
+              <p>Nippon Barbershop</p> 
+              <p>10km</p>
+              <p>15 mins</p>
+    
+              <button ion-button clear item-end (click)=" gotoviewbarber()">View</button>
+    
+             
+            </ion-item>
+            
+    
+            <ion-item-options side="right">
+                <button ion-button color="primary" (click)="gotobookcon()">
+                  <ion-icon name="bookmarks"></ion-icon>
+                  Book <br>Appointment
+                </button>
+              </ion-item-options>
+            </ion-item-sliding>
+
+            <ion-item-sliding>
+              <ion-item>
+                <ion-avatar item-start >
+                  <img src="../../assets/imgs/demon.jpg" style="width: 70px; height: 70px">
+                </ion-avatar>
+                <h2>Kanzaki</h2> 
+                <p>2km</p>
+                <p>5 mins</p>
+      
+                <button ion-button clear item-end (click)=" gotoviewbarber()">View</button>
+      
+               
+              </ion-item>
+              
+      
+              <ion-item-options side="right">
+                  <button ion-button color="primary" (click)="gotobookcon()">
+                    <ion-icon name="bookmarks"></ion-icon>
+                    Book <br>Appointment
+                  </button>
+                </ion-item-options>
+              </ion-item-sliding>
+
+              <ion-item-sliding>
+                <ion-item>
+                  <ion-avatar item-start >
+                    <img src="../../assets/imgs/oga tatsumi.jpg" style="width: 70px; height: 70px">
+                  </ion-avatar>
+                  <h2>Ramli</h2> 
+                  <p>Stylo Barbershop</p> 
+                  <p>7km</p>
+                  <p>12 mins</p>
+        
+                  <button ion-button clear item-end (click)=" gotoviewbarber()">View</button>
+        
+                 
+                </ion-item>
+                
+        
+                <ion-item-options side="right">
+                    <button ion-button color="primary" (click)="gotobookcon()">
+                      <ion-icon name="bookmarks"></ion-icon>
+                      Book <br>Appointment
+                    </button>
+                  </ion-item-options>
+                </ion-item-sliding>
+
+                <ion-item-sliding>
+                  <ion-item>
+                    <ion-avatar item-start >
+                      <img src="../../assets/imgs/tojo hidetora.jpg" style="width: 70px; height: 70px">
+                    </ion-avatar>
+                    <h2>Haziq</h2> 
+                    <p>5km</p>
+                    <p>10 mins</p>
+          
+                    <button ion-button clear item-end (click)=" gotoviewbarber()">View</button>
+          
+                   
+                  </ion-item>
+                  
+          
+                  <ion-item-options side="right">
+                      <button ion-button color="primary" (click)="gotobookcon()">
+                        <ion-icon name="bookmarks"></ion-icon>
+                        Book <br>Appointment
+                      </button>
+                    </ion-item-options>
+                  </ion-item-sliding>
       </ion-list>
+
 
 </ion-content>

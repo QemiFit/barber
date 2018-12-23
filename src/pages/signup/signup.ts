@@ -1,3 +1,4 @@
+import { TabPage } from './../tab/tab';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
@@ -51,7 +52,7 @@ export class SignupPage {
       };
     
 		this.auth.signUp(credentials, profile).then(
-			() => this.navCtrl.setRoot(CustHomePage),
+			() => this.navCtrl.setRoot(TabPage),
 			error => this.signupError = error.message
 		);
   }
@@ -59,5 +60,5 @@ export class SignupPage {
   category(){
     
   }
-s
+  
 }

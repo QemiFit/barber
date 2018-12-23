@@ -30,7 +30,7 @@
                         {{user.uid}}
                     </p>
 
-                    <button ion-button icon-only style="width: 45%; left:30%; background-color: #f2a035">
+                    <button (click)="gotobarberlist()" ion-button icon-only style="width: 45%; left:30%; background-color: #f2a035">
             <ion-icon name="card"></ion-icon>Redeem
           </button>
                 </ion-card-content>
@@ -48,7 +48,7 @@
                         Gift voucher is on the air! Grab it redeem it before July and keep enjoying our app!
                     </p>
 
-                    <button ion-button icon-only style="width: 45%; left:30%; background-color: #f2a035">
+                    <button (click)="gotobarberlist()" ion-button icon-only style="width: 45%; left:30%; background-color: #f2a035">
             <ion-icon name="card"></ion-icon>Redeem
           </button>
 
@@ -67,7 +67,7 @@
                         Merry Christmas! Let's celebrate it together with Christmas Coupon and enjoy your new looks!
                     </p>
 
-                    <button ion-button icon-only style="width: 45%; left:30%; background-color: #f2a035">
+                    <button (click)="gotobarberlist()" ion-button icon-only style="width: 45%; left:30%; background-color: #f2a035">
             <ion-icon name="card"></ion-icon>Redeem
           </button>
 
@@ -77,7 +77,7 @@
     </ion-slides>
 
     <ion-fab center bottom style="height: 25%; left:47%; ">
-        <button ion-fab style="width: 80px ; height: 80px; background-color: #f2a035">Get Cut!</button>
+        <button (click)="gotobarberlist()" ion-fab style="width: 80px ; height: 80px; background-color: #f2a035">Get Cut!</button>
     </ion-fab>
 
 

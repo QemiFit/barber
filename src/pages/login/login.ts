@@ -1,8 +1,11 @@
+import { TabPage } from './../tab/tab';
+import { SignupPage } from './../signup/signup';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {CustHomePage} from '../cust-home/cust-home';
 import {AuthService} from '../../services/auth.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AlertController } from 'ionic-angular';
 /**
  * Generated class for the LoginPage page.
  *
@@ -19,7 +22,7 @@ export class LoginPage {
   loginForm: FormGroup;
 	loginError: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private auth: AuthService, fb: FormBuilder) 
+  constructor(public navCtrl: NavController, public navParams: NavParams, private auth: AuthService, fb: FormBuilder, public alertCtrl: AlertController) 
   {
     this.loginForm = fb.group({
 			email: ['', Validators.compose([Validators.required, Validators.email])],
@@ -44,7 +47,7 @@ export class LoginPage {
 		};
 		this.auth.signInWithEmail(credentials)
 			.then(
-				() => this.navCtrl.setRoot(CustHomePage),
+				() => this.navCtrl.setRoot(TabPage),
 				error => this.loginError = error.message
 			);
 	}
@@ -52,7 +55,52 @@ export class LoginPage {
 	signup(){
 		
 	}
+	gotosign(){
+    this.navCtrl.push(SignupPage);
+	}
+	
+	
+  showPrompt() {
+    const prompt = this.alertCtrl.create({
+      title: 'Forgot password',
+      message: "Enter your email. We will send your current password.",
+      inputs: [
+        {
+          name: 'email',
+          placeholder: 'Email'
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Send',
+          handler: data =>   {
+            this.showAlert();
+          }
+        }
+      ]
+    });
+    prompt.present();
+  }
+  
+  showAlert() {
+    const alert = this.alertCtrl.create({
+      title: 'Success!',
+      subTitle: 'We have send your password, open your email!',
+      buttons: ['OK']
+    });
+    setTimeout(()=>alert.present(),3000);
+  }
+}
+	
+  
+
 
   
 
-}
+

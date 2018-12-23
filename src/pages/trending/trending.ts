@@ -1,3 +1,4 @@
+import { PhotoReviewPage } from './../photo-review/photo-review';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -22,4 +23,7 @@ export class TrendingPage {
     console.log('ionViewDidLoad TrendingPage');
   }
 
+  gotophotoreview(){
+    this.navCtrl.push(PhotoReviewPage);
+  }
 }

@@ -1,8 +1,7 @@
+import { ReviewRatingPage } from './../review-rating/review-rating';
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {OrderService} from "../../services/order.service";
-import { AngularFireAuth } from "angularfire2/auth";
-
 
 /**
  * Generated class for the ReceiptPage page.
@@ -18,7 +17,7 @@ import { AngularFireAuth } from "angularfire2/auth";
 })
 export class ReceiptPage implements OnInit{
   booking;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private order: OrderService, private afa: AngularFireAuth) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private order: OrderService) {
     // this.booking = order.getReceipt("dPDqhwM7KXT2vkkildE4");
   }
 
@@ -29,6 +28,10 @@ export class ReceiptPage implements OnInit{
   ionViewDidLoad() {
     console.log('ionViewDidLoad ReceiptPage');
     console.log(this.booking.name);
+  }
+
+  gotoreviewrate(){
+    this.navCtrl.push(ReviewRatingPage);
   }
 
 }

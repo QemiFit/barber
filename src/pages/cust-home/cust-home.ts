@@ -1,3 +1,4 @@
+import { BarberListPage } from './../barber-list/barber-list';
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { AuthService } from "../../services/auth.service";
@@ -26,8 +27,13 @@ export class CustHomePage {
     this.user = auth.getUser();
   }
 
+
   ionViewDidLoad() {
     console.log("ionViewDidLoad CustHomePage");
     console.log(this.user);
+  }
+
+  gotobarberlist(){
+    this.navCtrl.push(BarberListPage);
   }
 }

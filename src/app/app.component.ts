@@ -11,6 +11,7 @@ import { SignupPage } from "../pages/signup/signup";
 import { LoginPage } from "../pages/login/login";
 import { CustHomePage } from "../pages/cust-home/cust-home";
 import { BarberListPage } from "../pages/barber-list/barber-list";
+import {BarberReviewPage} from "../pages/barber-review/barber-review";
 import { BookConfirmationPage } from "../pages/book-confirmation/book-confirmation";
 import {BookingDetailPage} from "../pages/booking-detail/booking-detail";
 import {BookingListPage} from "../pages/booking-list/booking-list";
@@ -24,9 +25,11 @@ import {EditProfilePage} from "../pages/edit-profile/edit-profile";
 import { BarbHomePage } from "../pages/barb-home/barb-home";
 import { RequestListPage } from "../pages/request-list/request-list";
 import { RequestDetailPage } from "../pages/request-detail/request-detail";
+import {BarberProfilePage} from "../pages/barber-profile/barber-profile";
 import { AuthService } from "../services/auth.service";
 import { LogoutPage } from "../pages/logout/logout";
-
+import {TabPage} from "../pages/tab/tab";
+import {BarberPage} from "../pages/barber/barber";
 @Component({
   templateUrl: "app.html"
 })
@@ -59,6 +62,7 @@ export class MyApp {
       { title: "Login", component: LoginPage },
       { title: "Cust_Home", component: CustHomePage },
       { title: "Barber_List", component: BarberListPage },
+      { title: "Barber_Review", component: BarberReviewPage },
       { title: "Book_Confirmation", component: BookConfirmationPage },
       { title: "Booking Detail", component: BookingDetailPage },
       { title: "Booking List", component: BookingListPage },
@@ -72,7 +76,12 @@ export class MyApp {
       { title: "Barb_Home", component: BarbHomePage },
       { title: "Request_List", component: RequestListPage },
       { title: "Request_Detail", component: RequestDetailPage },
-      { title: "logout", component: LogoutPage}
+      { title: "Barber_Profile", component: BarberProfilePage },
+      { title: "logout", component: LogoutPage},
+      { title: "tab", component: TabPage},
+      { title: "Barber", component: BarberPage},
+
+
     ];
   }
 

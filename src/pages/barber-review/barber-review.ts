@@ -1,9 +1,8 @@
-import { RequestListPage } from './../request-list/request-list';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the BarbHomePage page.
+ * Generated class for the BarberReviewPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,20 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-barb-home',
-  templateUrl: 'barb-home.html',
+  selector: 'page-barber-review',
+  templateUrl: 'barber-review.html',
 })
-export class BarbHomePage {
+export class BarberReviewPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad BarbHomePage');
-  }
-
-  gotoreqlist(){
-    this.navCtrl.push(RequestListPage);
+    console.log('ionViewDidLoad BarberReviewPage');
   }
 
 }

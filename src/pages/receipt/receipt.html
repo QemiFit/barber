@@ -29,33 +29,33 @@
           Thank you for using our service!
           </ion-card-title>
         <p>
-          Name: {{booking.booker}}
+          Name: haqeemi
         </p><br>
         <p>
-         Barber: {{booking.name}}
+         Barber: Saiki Kusuo
         </p><br>
         <p>
-          Shop: {{booking.shop}}
+          Shop: Bangi Barbershop
         </p><br>
         <p>
           Distance: 2km
         </p><br>
         <p>
-          Date: {{booking.date}}
+          DateTime: 20/12/2018 12:00 pm
         </p><br>
         <p>
             Additional Service: Put Pomade
           </p><br>
           <p>
-              Grand Total: {{booking.grandtotal}}
+              Grand Total: RM14
             </p><br>
 
             <p>
-              Status: {{booking.status}}
+              Status: Completed
             </p>
 
             <ion-row justify-content-center>
-            <ion-col col-8 bottom><button ion-button style="background-color: #0aeb15; left: 40px; width: 100px !important" round>Give Rating</button></ion-col>
+            <ion-col col-8 bottom><button ion-button style="background-color: #0aeb15; left: 40px; width: 100px !important" round (click)="gotoreviewrate()">Give Rating</button></ion-col>
             </ion-row>
 
       </ion-card-content>

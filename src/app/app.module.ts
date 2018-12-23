@@ -11,6 +11,7 @@ import { SignupPage } from "../pages/signup/signup";
 import { LoginPage } from "../pages/login/login";
 import { CustHomePage } from "../pages/cust-home/cust-home";
 import { BarberListPage } from "../pages/barber-list/barber-list";
+import {BarberReviewPage} from "../pages/barber-review/barber-review";
 import { BookConfirmationPage } from "../pages/book-confirmation/book-confirmation";
 import{BookingDetailPage} from "../pages/booking-detail/booking-detail";
 import {BookingListPage} from "../pages/booking-list/booking-list";
@@ -24,7 +25,10 @@ import {EditProfilePage} from "../pages/edit-profile/edit-profile";
 import { BarbHomePage } from "../pages/barb-home/barb-home";
 import { RequestListPage } from "../pages/request-list/request-list";
 import { RequestDetailPage } from "../pages/request-detail/request-detail";
+import {BarberProfilePage} from "../pages/barber-profile/barber-profile";
 import { LogoutPage} from "../pages/logout/logout";
+import {TabPage} from "../pages/tab/tab";
+import {BarberPage} from "../pages/barber/barber";
 
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
@@ -50,6 +54,7 @@ import { NgxErrorsModule } from "@ultimate/ngxerrors";
     LoginPage,
     CustHomePage,
     BarberListPage,
+    BarberReviewPage,
     BookConfirmationPage,
     BookingDetailPage,
     BookingListPage,
@@ -63,7 +68,10 @@ import { NgxErrorsModule } from "@ultimate/ngxerrors";
     BarbHomePage,
     RequestListPage,
     RequestDetailPage,
-    LogoutPage
+    BarberProfilePage,
+    LogoutPage,
+    TabPage,
+    BarberPage,
   ],
   imports: [
     BrowserModule,
@@ -84,6 +92,7 @@ import { NgxErrorsModule } from "@ultimate/ngxerrors";
     LoginPage,
     CustHomePage,
     BarberListPage,
+    BarberReviewPage,
     BookConfirmationPage,
     BookingDetailPage,
     BookingListPage,
@@ -97,7 +106,10 @@ import { NgxErrorsModule } from "@ultimate/ngxerrors";
     BarbHomePage,
     RequestListPage,
     RequestDetailPage,
-    LogoutPage
+    BarberProfilePage,
+    LogoutPage,
+    TabPage,
+    BarberPage,
   ],
   providers: [
     StatusBar,

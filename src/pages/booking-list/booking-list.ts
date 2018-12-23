@@ -1,3 +1,5 @@
+import { ReceiptPage } from './../receipt/receipt';
+import { CurrentBookingPage } from './../current-booking/current-booking';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -20,6 +22,14 @@ export class BookingListPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BookingListPage');
+  }
+
+  gotocurrentbook(){
+    this.navCtrl.push(CurrentBookingPage);
+  }
+
+  gotoreceipt(){
+    this.navCtrl.push(ReceiptPage);
   }
 
 }

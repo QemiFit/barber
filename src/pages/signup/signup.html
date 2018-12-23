@@ -56,7 +56,7 @@
         
         <ion-item [ngClass]="{ invalid: categoryErrors.hasError('*', ['touched']) }">
            <ion-label>Category</ion-label>
-          <ion-select formControlName="category" multiple="true">
+          <ion-select formControlName="category">
               <ion-option value="1">Barber</ion-option>
               <ion-option value="2">Customer</ion-option>
             </ion-select>

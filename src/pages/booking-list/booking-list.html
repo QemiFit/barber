@@ -26,7 +26,7 @@
   
       <div [ngSwitch]="booking">
           <ion-list *ngSwitchCase="'current'">
-            <ion-item>
+            <ion-item (click)=" gotocurrentbook()">
               <ion-avatar item-start >
                 <img src="../../assets/imgs/sasuke.jpg" style="width: 70px; height: 70px">
               </ion-avatar>
@@ -47,7 +47,7 @@
           </ion-list>
         
           <ion-list *ngSwitchCase="'history'">
-            <ion-item>
+            <ion-item (click)="gotoreceipt()">
               <ion-avatar item-start >
                 <img src="../../assets/imgs/saiki.jpg" style="width: 70px; height: 70px">
               </ion-avatar>
