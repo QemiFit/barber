@@ -27,8 +27,8 @@ export class ReviewRatingPage {
 
   showAlert() {
     const alert = this.alertCtrl.create({
-      title: 'Success!',
-      subTitle: 'Your booking has been successfully canceled! Thank you for using our service!',
+      title: 'Thank You!',
+      subTitle: 'Your review has been submitted! Thank you for using our service!',
       buttons: [
         {
           text:'OK',
