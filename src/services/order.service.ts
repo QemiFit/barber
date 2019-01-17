@@ -2,76 +2,50 @@ import { Injectable } from "@angular/core";
 import * as firebase from "firebase/app";
 import { Timestamp } from "../../node_modules/rxjs";
 import { ElementSchemaRegistry } from "../../node_modules/@angular/compiler";
-
-// model
-interface booking {
-  name: string;
-  shop: string;
-  // distance: number;
-  date: Timestamp<any>;
-  // addService: Array<any>;
-  booker: string;
-  grandtotal: number;
-  status: number;
-}
+import { booking } from "../models/booking.model";
+import { servicemodel } from "../models/service.model";
 
 @Injectable()
 export class OrderService {
-  book: booking;
-  bookname;
-  bookdate;
-  bookgrandtotal;
-  bookshop;
-  bookbooker;
-  bookstatus;
-
   constructor() {}
 
-  async getReceipt(receiptID) {
+  getReceipt(receiptID) {
     // firebase method to get data in collection and document
-    await firebase
+    let bookingState = new booking();
+    firebase
       .firestore()
       .collection("booking")
       .doc(receiptID)
       .get()
-      .then(async doc => {
-        console.log("document data", doc.data());
+      .then(doc => {
+        let bookdata = doc.data();
 
-        // binding doc data to variable bookdata
-        let bookdata =  doc.data();
-
-        this.bookstatus = await bookdata.Status;
-
-        this.bookdate = bookdata.Booking_date;
-        this.bookgrandtotal = bookdata.Total_Price;
-
-        console.log(this.bookgrandtotal);
-        console.log(this.bookdate);
+        if (bookdata.status == 1) {
+          bookingState.status = "incomplete";
+        }
+        bookingState.date = bookdata.Booking_date;
+        bookingState.grandtotal = bookdata.Total_Price;
 
         // untuk dapatkan data kepada reference dalam document DB
-        await bookdata.Barber.get().then(async barberdata => {
+        bookdata.Barber.get().then(barberdata => {
           console.log(barberdata.data());
 
-          await barberdata
+          barberdata
             .data()
             .shop.get()
             .then(async shopdata => {
               console.log(shopdata.data());
 
-              this.bookshop = await shopdata.data().Name;
-
-              console.log(this.bookshop);
+              bookingState.shop = await shopdata.data().Name;
             });
 
-          await barberdata
+          barberdata
             .data()
             .userID.get()
             .then(async userdata => {
               console.log(userdata.data());
 
-              this.bookname = await userdata.data().name;
-
-              console.log(this.bookname);
+              bookingState.name = userdata.data().name;
             });
         });
 
@@ -79,36 +53,49 @@ export class OrderService {
           console.log(promodata.data());
         });
 
-        await bookdata.bookerID.get().then(async bookerdata => {
+        bookdata.bookerID.get().then(bookerdata => {
           console.log(bookerdata.data());
 
-          this.bookbooker = await bookerdata.data().Name; 
-
-          console.log(this.bookbooker);
+          bookingState.booker = bookerdata.data().name;
         });
 
+        let arrayserv = [];
         // this one untuk pecahkan array
-        bookdata.Service.forEach(element => {
-          element.get().then(async servdata => {
-            console.log(servdata.data());
-          });
+        bookdata.Service.forEach(async element => {
+          let servname = await element.get();
+          // await arrayserv.concat(servname);
+          console.log(servname.data().Name);
+          arrayserv.push(servname.data().Name);
+          console.log(arrayserv);
+          bookingState.addService = arrayserv.toString();
         });
+
+        console.log(bookingState);
       })
       .catch(function(error) {
         console.log("error getting document", error);
       });
 
-    console.log(this.bookbooker);
+    return bookingState;
+  }
 
-    this.book = {
-      name: this.bookname,
-      shop: this.bookshop,
-      date: this.bookdate,
-      grandtotal: this.bookgrandtotal,
-      booker: this.bookbooker,
-      status: this.bookstatus
-    };
-    console.log(this.book);
-    return this.book;
+  getservice(servidarray) {
+    let service = [];
+    servidarray.forEach(element => {
+      let servicemod = new servicemodel();
+      firebase
+        .firestore()
+        .collection("services")
+        .doc(element)
+        .get()
+        .then(res => {
+          servicemod.name = res.data().Name;
+          servicemod.price = res.data().Price;
+        });
+
+      service.push(servicemod);
+    });
+
+    return service;
   }
 }

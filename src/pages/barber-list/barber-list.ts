@@ -1,7 +1,9 @@
-import { BarberReviewPage } from './../barber-review/barber-review';
-import { BookConfirmationPage } from './../book-confirmation/book-confirmation';
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { BarberReviewPage } from "./../barber-review/barber-review";
+import { BookConfirmationPage } from "./../book-confirmation/book-confirmation";
+import { Component } from "@angular/core";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { BarberService } from "../../services/barber.service";
+import { barberlist } from "../../models/barberlist.model";
 
 /**
  * Generated class for the BarberListPage page.
@@ -12,24 +14,33 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-barber-list',
-  templateUrl: 'barber-list.html',
+  selector: "page-barber-list",
+  templateUrl: "barber-list.html"
 })
 export class BarberListPage {
+  barberlists;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public barberserv: BarberService
+  ) {}
+
+  ionViewCanEnter() {
+    this.barberlists = this.barberserv.listbarber();
+    console.log(this.barberlists);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad BarberListPage');
+    console.log("ionViewDidLoad BarberListPage");
   }
 
-  gotoviewbarber(){
+  gotoviewbarber() {
     this.navCtrl.push(BarberReviewPage);
   }
 
-  gotobookcon(){
-    this.navCtrl.push(BookConfirmationPage);
+  gotobookcon(barbid) {
+    // console.log(barbid);
+    this.navCtrl.push(BookConfirmationPage, { barberid: barbid });
   }
-
 }

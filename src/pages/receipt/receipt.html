@@ -6,59 +6,62 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>receipt</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>receipt</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding class="master-page-bg">
 
-  <ion-card full>
-    <ion-item>
-        <ion-row justify-content-center>
-            <ion-col col-3><ion-avatar>
-        <img src="../../assets/imgs/barber.png" style="width: 100%; height: 100px">
-    </ion-avatar></ion-col>
-        </ion-row>
-    </ion-item>
-    
-      <ion-card-content>
-        <ion-card-title>
-          Thank you for using our service!
-          </ion-card-title>
-        <p>
-          Name: haqeemi
-        </p><br>
-        <p>
-         Barber: Saiki Kusuo
-        </p><br>
-        <p>
-          Shop: Bangi Barbershop
-        </p><br>
-        <p>
-          Distance: 2km
-        </p><br>
-        <p>
-          DateTime: 20/12/2018 12:00 pm
-        </p><br>
-        <p>
-            Additional Service: Put Pomade
-          </p><br>
-          <p>
-              Grand Total: RM14
+    <ion-card full>
+        <ion-item>
+            <ion-row justify-content-center>
+                <ion-col col-3>
+                    <ion-avatar>
+                        <img src="../../assets/imgs/barber.png" style="width: 100%; height: 100px">
+                    </ion-avatar>
+                </ion-col>
+            </ion-row>
+        </ion-item>
+
+        <ion-card-content>
+            <ion-card-title>
+                Thank you for using our service!
+            </ion-card-title>
+            <p>
+                Name: {{booking.booker}}
+            </p><br>
+            <p>
+                Barber: {{booking.name}}
+            </p><br>
+            <p>
+                Shop: {{booking.shop}}
+            </p><br>
+            <p>
+                Distance: 2km
+            </p><br>
+            <p>
+                DateTime: {{booking.date}}
+            </p><br>
+            <p>
+                Additional Service: {{booking.addService}}
+            </p>
+            <br>
+            <p>
+                Grand Total: {{booking.grandtotal}}
             </p><br>
 
             <p>
-              Status: Completed
+                Status: {{booking.status}}
             </p>
 
             <ion-row justify-content-center>
-            <ion-col col-8 bottom><button ion-button style="background-color: #0aeb15; left: 40px; width: 100px !important" round (click)="gotoreviewrate()">Give Rating</button></ion-col>
+                <ion-col col-8 bottom><button ion-button style="background-color: #0aeb15; left: 40px; width: 100px !important" round (click)="gotoreviewrate()">Give Rating</button></ion-col>
             </ion-row>
 
-      </ion-card-content>
-  </ion-card>
+        </ion-card-content>
+    </ion-card>
 
 </ion-content>

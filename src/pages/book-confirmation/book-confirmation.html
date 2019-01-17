@@ -6,63 +6,66 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>book_confirmation</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>book_confirmation</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding class="master-page-bg">
 
-   <ion-card full>
-      <ion-item>
-          <ion-row justify-content-center>
-              <ion-col col-3><ion-avatar>
-          <img src="../../assets/imgs/sasuke.jpg" style="width: 100%; height: 100px">
-      </ion-avatar></ion-col>
-          </ion-row>
-      </ion-item>
-      
+    <ion-card full>
+        <ion-item>
+            <ion-row justify-content-center>
+                <ion-col col-3>
+                    <ion-avatar>
+                        <img src="../../assets/imgs/sasuke.jpg" style="width: 100%; height: 100px">
+                    </ion-avatar>
+                </ion-col>
+            </ion-row>
+        </ion-item>
+
         <ion-card-content>
-          <ion-card-title>
-            Booking Detail
+            <ion-card-title>
+                Booking Detail
             </ion-card-title>
-          <p>
-           Name: Uchiha Sasuke
-          </p><br>
-          <p>
-            Shop: Baek Barbershop
-          </p><br>
-          <p>
-            Distance: 5km
-          </p><br>
+            <p>
+                Barber Name: {{barberdetail.name}}
+            </p><br>
+            <p>
+                Shop: {{barberdetail.shop}}
+            </p><br>
 
-          <ion-item>
-              <ion-label  ion-button outline style="color:#000000"><b style="font-size: 20px">Date</b></ion-label>
-              <ion-datetime displayFormat="DD/MM/YYYY"></ion-datetime>
-            </ion-item>
 
-            <ion-item>
-                <ion-label ion-button outline style="color:#000000"><b style="font-size: 20px">Time</b></ion-label>
-                <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A"></ion-datetime>
-              </ion-item><br>
+            <form class="form" [formGroup]="bookconf" (ngSubmit)="gotobookdtl(bookconf.value)">
 
-              <ion-item>
-                  <ion-label>Additional Service</ion-label>
-                  <ion-select multiple="true">
-                    <ion-option>Shave RM5</ion-option>
-                    <ion-option>Put Pomade RM2</ion-option>
-                    <ion-option>Buy Pomade RM15</ion-option>
+                <ion-input type="text" formControlName="barberid" value={{barberdetail.barberid}} hidden></ion-input>
+                <ion-input type="text" formControlName="userid" value={{user.uid}} hidden></ion-input>
+                <ion-item>
+                    <ion-label ion-button outline style="color:#000000"><b style="font-size: 20px">Date</b></ion-label>
+                    <ion-datetime displayFormat="DD/MM/YYYY" formControlName="date"></ion-datetime>
+                </ion-item>
 
-                        </ion-select>
+                <ion-item>
+                    <ion-label ion-button outline style="color:#000000"><b style="font-size: 20px">Time</b></ion-label>
+                    <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" formControlName="time"></ion-datetime>
+                </ion-item><br>
+
+                <ion-item>
+                    <ion-label>Additional Service</ion-label>
+                    <ion-select multiple="true" formControlName="category">
+                        <ion-option value="9JYwTIu7QV2luGMDbnRE">Shave RM5</ion-option>
+                        <ion-option value="sAfu1vN2aOyA7FiDkrR1">Put Pomade RM2</ion-option>
+                        <ion-option value="xNe9DgbFbv3C9pj7Eqsc">Buy Pomade RM15</ion-option>
+
+                    </ion-select>
                 </ion-item><br><br><br><br>
-
                 <ion-col col-12 bottom><button ion-button style="background-color: #fd0000;" round (click)="gotobarberlist()">Cancel</button></ion-col>
-                <ion-col col-4 bottom><button ion-button style="background-color: #f2a035; left: 40px; width: 100px !important" round (click)="gotobookdtl()">Cut</button></ion-col>
-          
+                <ion-col col-4 bottom><button ion-button style="background-color: #f2a035; left: 40px; width: 100px !important" round type="submit">Cut</button></ion-col>
+            </form>
         </ion-card-content>
-      </ion-card>
+    </ion-card>
 
 
 

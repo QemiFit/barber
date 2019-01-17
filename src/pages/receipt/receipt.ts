@@ -1,7 +1,7 @@
-import { ReviewRatingPage } from './../review-rating/review-rating';
-import { Component, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {OrderService} from "../../services/order.service";
+import { ReviewRatingPage } from "./../review-rating/review-rating";
+import { Component, OnInit } from "@angular/core";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { OrderService } from "../../services/order.service";
 
 /**
  * Generated class for the ReceiptPage page.
@@ -12,26 +12,27 @@ import {OrderService} from "../../services/order.service";
 
 @IonicPage()
 @Component({
-  selector: 'page-receipt',
-  templateUrl: 'receipt.html',
+  selector: "page-receipt",
+  templateUrl: "receipt.html"
 })
-export class ReceiptPage implements OnInit{
+export class ReceiptPage {
   booking;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private order: OrderService) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private order: OrderService
+  ) {
     // this.booking = order.getReceipt("dPDqhwM7KXT2vkkildE4");
   }
 
-  ngOnInit(){
+  ionViewWillLoad() {
+    console.log("ionViewDidLoad CustHomePage");
     this.booking = this.order.getReceipt("dPDqhwM7KXT2vkkildE4");
+
+    console.log(this.booking);
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ReceiptPage');
-    console.log(this.booking.name);
-  }
-
-  gotoreviewrate(){
+  gotoreviewrate() {
     this.navCtrl.push(ReviewRatingPage);
   }
-
 }

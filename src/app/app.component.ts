@@ -11,25 +11,25 @@ import { SignupPage } from "../pages/signup/signup";
 import { LoginPage } from "../pages/login/login";
 import { CustHomePage } from "../pages/cust-home/cust-home";
 import { BarberListPage } from "../pages/barber-list/barber-list";
-import {BarberReviewPage} from "../pages/barber-review/barber-review";
+import { BarberReviewPage } from "../pages/barber-review/barber-review";
 import { BookConfirmationPage } from "../pages/book-confirmation/book-confirmation";
-import {BookingDetailPage} from "../pages/booking-detail/booking-detail";
-import {BookingListPage} from "../pages/booking-list/booking-list";
-import {CurrentBookingPage} from "../pages/current-booking/current-booking";
+import { BookingDetailPage } from "../pages/booking-detail/booking-detail";
+import { BookingListPage } from "../pages/booking-list/booking-list";
+import { CurrentBookingPage } from "../pages/current-booking/current-booking";
 import { ReceiptPage } from "../pages/receipt/receipt";
-import {ReviewRatingPage} from "../pages/review-rating/review-rating";
+import { ReviewRatingPage } from "../pages/review-rating/review-rating";
 import { TrendingPage } from "../pages/trending/trending";
 import { PhotoReviewPage } from "../pages/photo-review/photo-review";
 import { UserProfPage } from "../pages/user-prof/user-prof";
-import {EditProfilePage} from "../pages/edit-profile/edit-profile";
+import { EditProfilePage } from "../pages/edit-profile/edit-profile";
 import { BarbHomePage } from "../pages/barb-home/barb-home";
 import { RequestListPage } from "../pages/request-list/request-list";
 import { RequestDetailPage } from "../pages/request-detail/request-detail";
-import {BarberProfilePage} from "../pages/barber-profile/barber-profile";
+import { BarberProfilePage } from "../pages/barber-profile/barber-profile";
 import { AuthService } from "../services/auth.service";
 import { LogoutPage } from "../pages/logout/logout";
-import {TabPage} from "../pages/tab/tab";
-import {BarberPage} from "../pages/barber/barber";
+import { TabPage } from "../pages/tab/tab";
+import { BarberPage } from "../pages/barber/barber";
 @Component({
   templateUrl: "app.html"
 })
@@ -40,7 +40,7 @@ export class MyApp {
 
   pages: Array<{ title: string; component: any }>;
 
-  user: any; 
+  user: any;
 
   constructor(
     public platform: Platform,
@@ -49,8 +49,6 @@ export class MyApp {
     private auth: AuthService
   ) {
     this.initializeApp();
-
-    this.auth;
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -77,11 +75,9 @@ export class MyApp {
       { title: "Request_List", component: RequestListPage },
       { title: "Request_Detail", component: RequestDetailPage },
       { title: "Barber_Profile", component: BarberProfilePage },
-      { title: "logout", component: LogoutPage},
-      { title: "tab", component: TabPage},
-      { title: "Barber", component: BarberPage},
-
-
+      { title: "logout", component: LogoutPage },
+      { title: "tab", component: TabPage },
+      { title: "Barber", component: BarberPage }
     ];
   }
 

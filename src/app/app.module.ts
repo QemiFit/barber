@@ -11,37 +11,41 @@ import { SignupPage } from "../pages/signup/signup";
 import { LoginPage } from "../pages/login/login";
 import { CustHomePage } from "../pages/cust-home/cust-home";
 import { BarberListPage } from "../pages/barber-list/barber-list";
-import {BarberReviewPage} from "../pages/barber-review/barber-review";
+import { BarberReviewPage } from "../pages/barber-review/barber-review";
 import { BookConfirmationPage } from "../pages/book-confirmation/book-confirmation";
-import{BookingDetailPage} from "../pages/booking-detail/booking-detail";
-import {BookingListPage} from "../pages/booking-list/booking-list";
-import {CurrentBookingPage} from "../pages/current-booking/current-booking";
+import { BookingDetailPage } from "../pages/booking-detail/booking-detail";
+import { BookingListPage } from "../pages/booking-list/booking-list";
+import { CurrentBookingPage } from "../pages/current-booking/current-booking";
 import { ReceiptPage } from "../pages/receipt/receipt";
-import {ReviewRatingPage} from "../pages/review-rating/review-rating";
+import { ReviewRatingPage } from "../pages/review-rating/review-rating";
 import { TrendingPage } from "../pages/trending/trending";
 import { PhotoReviewPage } from "../pages/photo-review/photo-review";
 import { UserProfPage } from "../pages/user-prof/user-prof";
-import {EditProfilePage} from "../pages/edit-profile/edit-profile";
+import { EditProfilePage } from "../pages/edit-profile/edit-profile";
 import { BarbHomePage } from "../pages/barb-home/barb-home";
 import { RequestListPage } from "../pages/request-list/request-list";
 import { RequestDetailPage } from "../pages/request-detail/request-detail";
-import {BarberProfilePage} from "../pages/barber-profile/barber-profile";
-import { LogoutPage} from "../pages/logout/logout";
-import {TabPage} from "../pages/tab/tab";
-import {BarberPage} from "../pages/barber/barber";
+import { BarberProfilePage } from "../pages/barber-profile/barber-profile";
+import { LogoutPage } from "../pages/logout/logout";
+import { TabPage } from "../pages/tab/tab";
+import { BarberPage } from "../pages/barber/barber";
 
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 
 import { AngularFireModule } from "angularfire2";
 import { AngularFireAuth } from "angularfire2/auth";
-import { AngularFirestoreModule } from "angularfire2/firestore";
+import {
+  AngularFirestoreModule,
+  AngularFirestore
+} from "angularfire2/firestore";
 import { AngularFireDatabaseModule } from "angularfire2/database";
 // import { AngularFirestore} from 'angularfire2/firestore';
 import { firebaseConfig } from "../config";
 import { AuthService } from "../services/auth.service";
 import { OrderService } from "../services/order.service";
-import { NgxErrorsModule } from "@ultimate/ngxerrors";
+import { UserService } from "../services/user.service";
+import { BarberService } from "../services/barber.service";
 
 @NgModule({
   declarations: [
@@ -71,13 +75,12 @@ import { NgxErrorsModule } from "@ultimate/ngxerrors";
     BarberProfilePage,
     LogoutPage,
     TabPage,
-    BarberPage,
+    BarberPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig.fire),
-    NgxErrorsModule,
     AngularFirestoreModule
     // AngularFireDatabaseModule
   ],
@@ -109,7 +112,7 @@ import { NgxErrorsModule } from "@ultimate/ngxerrors";
     BarberProfilePage,
     LogoutPage,
     TabPage,
-    BarberPage,
+    BarberPage
   ],
   providers: [
     StatusBar,
@@ -117,8 +120,10 @@ import { NgxErrorsModule } from "@ultimate/ngxerrors";
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     AngularFireAuth,
     AuthService,
-    OrderService
-    // AngularFirestore
+    UserService,
+    OrderService,
+    BarberService,
+    AngularFirestore
   ]
 })
 export class AppModule {}
